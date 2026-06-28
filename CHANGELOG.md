@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1 - 2026-06-28
+
+CI fix: adjusted starter shell scripts to satisfy ShellCheck in GitHub Actions.
+
 ## 0.1.0 - 2026-06-28
 
 Initial public-safe Hermes workspace template release.
