@@ -1,0 +1,33 @@
+# Secrets and auth
+.env
+.env.*
+!.env.example
+auth.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Runtime state
+sessions/
+state/
+logs/
+cache/
+request-dumps/
+*.sqlite
+*.sqlite3
+*.db
+
+# Backups/recovery
+recovery/
+backups/
+*.tar
+*.tar.gz
+*.zip
+
+# Local dev
+.DS_Store
+.venv/
+node_modules/
+__pycache__/
+.pytest_cache/

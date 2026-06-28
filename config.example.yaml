@@ -1,0 +1,21 @@
+# Example Hermes config placeholders. Copy to your real Hermes config location only after review.
+# Do not put real secrets in this file.
+
+profile: default
+primary_provider: <PRIMARY_PROVIDER>
+primary_model: <PRIMARY_MODEL>
+
+paths:
+  hermes_home: <YOUR_HERMES_HOME>
+  operations_dir: <YOUR_OPERATIONS_DIR>
+  wiki_dir: <YOUR_WIKI_DIR>
+  secrets_dir: <YOUR_SECRETS_DIR>
+  recovery_dir: <YOUR_RECOVERY_DIR>
+
+platforms:
+  messaging: <MESSAGING_PLATFORM>
+
+policies:
+  secret_redaction: true
+  pii_redaction: true
+  require_manual_approval_for_destructive_actions: true
