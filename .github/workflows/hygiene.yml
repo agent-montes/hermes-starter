@@ -1,0 +1,14 @@
+name: hygiene
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run starter hygiene check
+        run: ./scripts/hygiene-check.sh
