@@ -1,0 +1,37 @@
+# Restore Runbook
+
+## Scope
+
+<WHAT_THIS_RESTORE_COVERS>
+
+## Prerequisites
+
+- <TARGET_MACHINE_REQUIREMENT>
+- <HERMES_INSTALL_REQUIREMENT>
+- <ACCESS_TO_PRIVATE_SECRETS>
+- <ACCESS_TO_PRIVATE_BACKUPS>
+
+## Backup source
+
+<PRIVATE_BACKUP_LOCATION_DESCRIPTION>
+
+## Restore steps
+
+1. <STEP_ONE>
+2. <STEP_TWO>
+3. <STEP_THREE>
+
+## Verification steps
+
+- <VERIFY_CONFIG>
+- <VERIFY_TOOLS>
+- <VERIFY_GATEWAY>
+- <VERIFY_SCHEDULED_JOBS>
+
+## Rollback plan
+
+<ROLLBACK_STEPS>
+
+## Known risks
+
+<RISKS_AND_MITIGATIONS>

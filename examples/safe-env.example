@@ -1,0 +1,11 @@
+# Example Safe Environment
+
+This file demonstrates placeholder style only.
+
+HERMES_HOME=<YOUR_HERMES_HOME>
+PRIMARY_PROVIDER=<PRIMARY_PROVIDER>
+PRIMARY_MODEL=<PRIMARY_MODEL>
+MESSAGING_PLATFORM=<MESSAGING_PLATFORM>
+
+# Real provider keys belong in your private secret store, not in Git.
+MODEL_PROVIDER_API_KEY=<PLACEHOLDER_ONLY>

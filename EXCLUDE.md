@@ -22,3 +22,10 @@ Never add:
 - personal account exports
 - hardcoded home paths such as `/Users/<name>`
 - machine-specific facts unless clearly marked as placeholders or examples
+
+Folder-specific rules:
+
+- `workspace/Hermes Secrets/` may contain only the inert `.gitkeep` placeholder in Git.
+- `workspace/Hermes Recovery/` may contain public-safe process docs only, never real backup material.
+- `workspace/Hermes Wiki/` may contain public-safe scaffolding only, never private notes or raw evidence from a live vault.
+- `workspace/Hermes Operations/` may contain public-safe operating patterns only, never live channel routes or credentials.

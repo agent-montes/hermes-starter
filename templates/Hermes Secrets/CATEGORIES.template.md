@@ -1,0 +1,31 @@
+# Secret Categories Template
+
+This file documents categories only. Do not write real values here.
+
+## Model providers
+
+- MODEL_PROVIDER_API_KEY=<PLACEHOLDER_ONLY>
+
+## Messaging platforms
+
+- MESSAGING_PLATFORM_TOKEN=<PLACEHOLDER_ONLY>
+- MESSAGING_CHANNEL_ID=<PLACEHOLDER_ONLY>
+
+## Email
+
+- EMAIL_USERNAME=<PLACEHOLDER_ONLY>
+- EMAIL_PASSWORD=<PLACEHOLDER_ONLY>
+
+## Webhooks
+
+- WEBHOOK_SIGNING_SECRET=<PLACEHOLDER_ONLY>
+
+## OAuth
+
+- OAUTH_CLIENT_ID=<PLACEHOLDER_ONLY>
+- OAUTH_CLIENT_SECRET=<PLACEHOLDER_ONLY>
+- OAUTH_REFRESH_TOKEN=<PLACEHOLDER_ONLY>
+
+## Notes
+
+Store real values outside Git.

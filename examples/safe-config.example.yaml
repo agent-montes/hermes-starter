@@ -13,14 +13,12 @@ paths:
 
 security:
   redact_secrets: true
-  scan_commands: true
 
 privacy:
   redact_pii: true
 
 approvals:
   mode: manual
-  require_secret_scope_for_secret_access: true
 
 gateway:
   enabled: <true_or_false>

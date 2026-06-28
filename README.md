@@ -2,13 +2,14 @@
 
 A clean, reusable starter template for setting up a Hermes Agent workspace.
 
-This repository is public-safe by default. It contains instructions, examples, and guardrails only. It must not contain credentials, runtime state, memories, logs, private channel IDs, recovery archives, or user-specific data.
+This repository is public-safe by default. It contains instructions, examples, folder shells, and guardrails only. It must not contain credentials, runtime state, memories, logs, private channel IDs, recovery archives, or user-specific data.
 
 Use this repo as a GitHub template when starting a new Hermes setup, then fill in local details on the target machine.
 
 ## What this starter provides
 
-- A suggested folder layout for a Hermes setup.
+- A suggested sibling-folder layout for a Hermes setup.
+- Public-safe details for Wiki, Operations, Secrets, Recovery, and Starter responsibilities.
 - Generic agent context files.
 - Example config and environment placeholders.
 - Tool setup notes that can be adapted after review.
@@ -20,10 +21,35 @@ Use this repo as a GitHub template when starting a new Hermes setup, then fill i
 ```text
 Hermes Wiki/        # durable knowledge base, if used
 Hermes Operations/  # live operational setup instructions
-Hermes Secrets/     # credentials only; never publish
-Hermes Recovery/    # backups/restore artifacts; never publish
+Hermes Secrets/     # credentials only; blank in Git
+Hermes Recovery/    # backups/restore artifacts; no archives in Git
 Hermes Starter/     # this clean reusable starter
 ```
+
+A public-safe folder shell is included under `workspace/` so the intended layout is visible without copying private state.
+
+## Detailed guides
+
+- `docs/workspace-overview.md` — five-folder architecture.
+- `docs/folder-interactions.md` — how the folders work together during setup, tool adoption, live operation, recovery, and publishing.
+- `docs/system-overview.md` — how Wiki, Operations, Secrets, Recovery, and Starter work together.
+- `docs/wiki.md` — Wiki purpose, structure, and write behavior.
+- `docs/operations.md` — Operations purpose and lane model.
+- `docs/secrets.md` — secret boundary and public-safe placeholder style.
+- `docs/recovery.md` — recovery boundary and restore model.
+- `docs/agents-and-tools.md` — agent/tool responsibilities and model-lane policy using placeholders.
+- `docs/agent-context-files.md` — purpose of AGENTS, CLAUDE, and Hermes context files.
+- `docs/secrets-and-recovery.md` — blank secret inventory template and recovery boundaries.
+- `docs/replication-runbook.md` — step-by-step setup checklist for a new machine or workspace.
+- `docs/setup-principles.md` — short public-safe setup principles.
+
+## Templates and folder shells
+
+- `templates/Hermes Wiki/` — blank Wiki structure.
+- `templates/Hermes Operations/` — private Operations lane skeleton.
+- `templates/Hermes Secrets/` — secret-boundary placeholder plus blank category template; no values.
+- `templates/Hermes Recovery/` — blank restore and backup templates.
+- `workspace/` — visible public-safe folder shell; `workspace/Hermes Secrets/` contains only `.gitkeep`.
 
 ## Quickstart
 
@@ -39,6 +65,7 @@ Hermes Starter/     # this clean reusable starter
 - `config.example.yaml` — copy values into your real config location after review.
 - `.env.example` — copy variable names only; keep real values in a secret store.
 - `AGENTS.md`, `CLAUDE.md`, `.hermes.md` — adapt generic agent rules to your workspace.
+- `docs/` — update public-safe procedures and placeholders.
 - `tools/` — add one reviewed, public-safe note per tool.
 
 ## Non-goals

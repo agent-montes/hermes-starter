@@ -2,11 +2,13 @@
 .env
 .env.*
 !.env.example
+!*.env.example
 auth.json
 *.pem
 *.key
 *.p12
 *.pfx
+*.mobileconfig
 
 # Runtime state
 sessions/
@@ -14,16 +16,22 @@ state/
 logs/
 cache/
 request-dumps/
+gateway-state/
+allowed-users*
 *.sqlite
 *.sqlite3
 *.db
 
-# Backups/recovery
+# Backups/recovery archives
 recovery/
 backups/
 *.tar
 *.tar.gz
 *.zip
+
+# Allow public recovery templates
+!templates/Hermes Recovery/
+!templates/Hermes Recovery/**
 
 # Local dev
 .DS_Store
