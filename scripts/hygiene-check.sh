@@ -31,7 +31,8 @@ for d in sessions state logs request-dumps gateway-state cache; do
 done
 
 # The visible secrets folder shell must remain blank except for inert placeholders.
-for secrets_dir in './workspace/Hermes Secrets'; do
+secrets_dirs=('./workspace/Hermes Secrets')
+for secrets_dir in "${secrets_dirs[@]}"; do
   if [ -d "$secrets_dir" ]; then
     if find "$secrets_dir" -type f ! -name '.gitkeep' -print | grep -q .; then
       fail_msg "$secrets_dir contains files other than .gitkeep"

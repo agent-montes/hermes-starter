@@ -54,7 +54,7 @@ copy_tree() {
   fi
   run mkdir -p "$dst"
   while IFS= read -r -d '' item; do
-    rel="${item#$src/}"
+    rel="${item#"$src"/}"
     target="$dst/$rel"
     if [ -d "$item" ]; then
       run mkdir -p "$target"
