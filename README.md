@@ -433,8 +433,9 @@ Important directories:
 - `workspace/` shows the public-safe shape of the sibling folders.
 - `examples/` contains placeholder examples only.
 - `tools/` contains the credited public-safe tool catalog.
-- `scripts/` contains local checks.
-- `.github/workflows/` runs hygiene checks on GitHub.
+- `scripts/` contains local checks, workspace initialization, YAML validation, and context mirror verification.
+- `.github/workflows/` runs hygiene, context, shell, Markdown, YAML, link, and secret-scan checks on GitHub.
+- `QUICKSTART.md` contains the short 10-minute path.
 
 The tool catalog includes notes for document conversion, web crawlers, media processing, video generation, image generation, audio/transcription, YouTube/download helpers, ASCII/terminal art, creative web artifacts, GitHub/dev workflow tools, search/GIF tools, and local model fallback tools. Each note credits the official source or project and keeps credentials/output/state out of Git.
 
@@ -472,25 +473,38 @@ The Secrets template documents categories only. The visible workspace Secrets fo
 
 ## Quickstart
 
+For the shortest path, use `QUICKSTART.md`.
+
 1. Click `Use this template` on GitHub.
 2. Create a new private or public repo from it.
 3. Clone your new repo locally.
-4. Read `docs/workspace-overview.md` and `docs/daily-assistant-kit.md`.
-5. Copy the relevant folders from `templates/` into private sibling folders.
-6. Fill placeholders only in private local files.
-7. Put real credentials in a private secret store.
-8. Put backup artifacts in private Recovery storage.
-9. Run:
+4. Preview workspace creation:
+
+```bash
+./scripts/init-workspace.sh --dry-run
+```
+
+5. Create the private sibling folders from templates:
+
+```bash
+./scripts/init-workspace.sh
+```
+
+6. Put real credentials only in a private secret store.
+7. Put backup artifacts only in private Recovery storage.
+8. Run:
 
 ```bash
 ./scripts/hygiene-check.sh
+./scripts/sync-context-files.sh . --check
+./scripts/validate-yaml.py .
 ```
 
-10. Commit only public-safe starter changes.
+9. Commit only public-safe starter changes.
 
 ## Hygiene and safety checks
 
-The starter includes `scripts/hygiene-check.sh` and a GitHub Actions workflow.
+The starter includes `scripts/hygiene-check.sh`, `scripts/init-workspace.sh`, `scripts/sync-context-files.sh`, `scripts/validate-yaml.py`, and a GitHub Actions workflow.
 
 The hygiene check looks for:
 
@@ -503,7 +517,7 @@ The hygiene check looks for:
 - token-like assignments;
 - known token prefixes;
 - private key blocks;
-- live account identifiers;
+- local denylist entries from `.hygiene-denylist.local`, if configured;
 - non-placeholder files inside the visible Secrets shell.
 
 Passing hygiene does not prove perfect safety. It is a guardrail. Human review is still required before broad public sharing.
@@ -541,7 +555,14 @@ When improving this starter:
 
 1. Make changes locally.
 2. Keep everything placeholder-only.
-3. Run the hygiene check.
+3. Run the local checks:
+
+```bash
+./scripts/hygiene-check.sh
+./scripts/sync-context-files.sh . --check
+./scripts/validate-yaml.py .
+```
+
 4. Review `git status --short`.
 5. Commit with a clear message.
 6. Push to GitHub.

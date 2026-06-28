@@ -11,7 +11,11 @@ Before committing:
 
 ```bash
 ./scripts/hygiene-check.sh
+./scripts/sync-context-files.sh . --check
+./scripts/validate-yaml.py .
 ```
+
+If you add private identifiers that should never appear in this public starter, copy `.hygiene-denylist.example` to `.hygiene-denylist.local` and add them there. The local file is gitignored.
 
 5. Prefer small docs/scripts that teach reconstruction over snapshots of live state.
 

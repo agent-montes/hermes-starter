@@ -39,3 +39,5 @@ backups/
 node_modules/
 __pycache__/
 .pytest_cache/
+# Local hygiene configuration
+.hygiene-denylist.local

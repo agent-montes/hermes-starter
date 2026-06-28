@@ -5,6 +5,8 @@ Included public-safe artifacts:
 ## Root documentation
 
 - `README.md` — starter overview and quickstart.
+- `QUICKSTART.md` — 10-minute starter path.
+- `CHANGELOG.md` — template release history.
 - `LICENSE` — MIT license.
 - `SECURITY.md` — public-safe disclosure and handling policy.
 - `CONTRIBUTING.md` — contribution rules for safe changes.
@@ -19,11 +21,13 @@ Included public-safe artifacts:
 
 ## Examples and config
 
+- `.hygiene-denylist.example` — copy to local gitignored denylist for private identifiers.
 - `config.example.yaml` — placeholder-only config example.
 - `.env.example` — placeholder-only environment example.
 - `examples/` — non-sensitive examples only.
 
 ## Detailed docs
+
 - `docs/system-overview.md` — full setup explanation.
 - `docs/daily-assistant-kit.md` — daily assistant interview/delegation/promotion loop.
 - `docs/daily-assistant-safety.md` — approval gates and external-action rules.
@@ -71,8 +75,11 @@ Included public-safe artifacts:
 - `tools/github-and-dev-workflow.md` — GitHub CLI, git, zx.
 - `tools/research-and-gif-tools.md` — Exa and Tenor GIF API.
 - `tools/local-models.md` and `tools/local-ollama.md` — Ollama/local fallback policy.
-- `scripts/hygiene-check.sh` — local leak/hygiene check.
-- `.github/workflows/hygiene.yml` — CI hygiene check.
+- `scripts/hygiene-check.sh` — local leak/hygiene check with optional local denylist.
+- `scripts/init-workspace.sh` — one-command private sibling-folder initializer with dry-run mode.
+- `scripts/sync-context-files.sh` — verifies/generates `AGENTS.md` and `CLAUDE.md` from canonical `.hermes.md`.
+- `scripts/validate-yaml.py` — YAML syntax validation for examples/workflows.
+- `.github/workflows/hygiene.yml` — CI for hygiene, context drift, shell, Markdown, YAML, links, and secret scanning.
 - `workspace/` — public-safe visible folder shell for the five-folder model.
 - `workspace/Hermes Secrets/.gitkeep` — inert placeholder only; no secret template or value lives in this folder.
 

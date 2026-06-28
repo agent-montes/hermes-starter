@@ -5,6 +5,8 @@ cd "$ROOT"
 
 fail=0
 fail_msg() { echo "FAIL: $1"; fail=1; }
+TMP_BASE="${TMPDIR:-/tmp}/hermes-starter-hygiene.$$"
+trap 'rm -f "$TMP_BASE"*' EXIT
 
 # Disallow sensitive/runtime filenames while allowing explicit examples/templates.
 if find . -path './.git' -prune -o -type f \( \
@@ -54,24 +56,49 @@ done
 
 check_content() {
   local label="$1" pattern="$2"
-  if grep -RInE --exclude-dir=.git --exclude='hygiene-check.sh' --exclude='EXCLUDE.md' --exclude='.gitignore' "$pattern" . >/tmp/hermes-starter-hygiene.$$ 2>/dev/null; then
+  if grep -RInE --exclude-dir=.git --exclude='hygiene-check.sh' --exclude='EXCLUDE.md' --exclude='.gitignore' --exclude='.hygiene-denylist.example' "$pattern" . >"$TMP_BASE.content" 2>/dev/null; then
     echo "FAIL: $label"
-    cat /tmp/hermes-starter-hygiene.$$
+    cat "$TMP_BASE.content"
     fail=1
   else
     echo "OK: $label"
   fi
-  rm -f /tmp/hermes-starter-hygiene.$$
+  rm -f "$TMP_BASE.content"
+}
+
+check_local_denylist() {
+  local file='.hygiene-denylist.local'
+  if [ ! -f "$file" ]; then
+    echo 'OK: no local hygiene denylist configured'
+    return
+  fi
+  local line pattern hit=0
+  while IFS= read -r line || [ -n "$line" ]; do
+    pattern="${line%%#*}"
+    pattern="$(printf '%s' "$pattern" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+    [ -z "$pattern" ] && continue
+    if grep -RInF --exclude-dir=.git --exclude='.hygiene-denylist.local' -- "$pattern" . >>"$TMP_BASE.denylist" 2>/dev/null; then
+      hit=1
+    fi
+  done < "$file"
+  if [ "$hit" -ne 0 ]; then
+    echo 'FAIL: local denylist matches found'
+    cat "$TMP_BASE.denylist"
+    fail=1
+  else
+    echo 'OK: local denylist has no matches'
+  fi
+  rm -f "$TMP_BASE.denylist"
 }
 
 check_content 'hardcoded macOS user paths' '/Users/[A-Za-z0-9._-]+'
 check_content 'hardcoded Linux user paths' '/home/[A-Za-z0-9._-]+'
-check_content 'phone-number-like strings' '\+?[0-9][0-9 .()/-]{8,}[0-9]'
+check_content 'phone-number-like strings' '(\+[0-9][0-9 .()/-]{8,}[0-9]|\([0-9]{3}\)[0-9 .()/-]{6,}|[0-9]{3}[-. ][0-9]{3}[-. ][0-9]{4})'
 check_content 'common real-looking token assignments' '(api[_-]?key|token|secret|password)[A-Za-z0-9_ -]*[:=][[:space:]]*[A-Za-z0-9_./+=-]{20,}'
 check_content 'known token prefixes' 'github_pat_|ghp_|sk-[A-Za-z0-9]|xox[baprs]-|Bearer [A-Za-z0-9._-]+'
 check_content 'private key block' 'BEGIN (RSA |OPENSSH |EC |DSA |)PRIVATE KEY'
 check_content 'session/state JSON artifacts' 'session[^/]*\.json|state[^/]*\.json'
-check_content 'live account identifiers' 'agent-montes|19037476363|Oscar'
+check_local_denylist
 
 if [ "$fail" -ne 0 ]; then
   echo 'hygiene_check_failed'

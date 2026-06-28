@@ -8,7 +8,39 @@ on:
 jobs:
   hygiene:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
     steps:
       - uses: actions/checkout@v4
+
       - name: Run starter hygiene check
         run: ./scripts/hygiene-check.sh
+
+      - name: Check context mirrors
+        run: ./scripts/sync-context-files.sh . --check
+
+      - name: ShellCheck scripts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y shellcheck
+          shellcheck scripts/*.sh
+
+      - name: Validate YAML
+        run: |
+          python3 -m pip install --user pyyaml
+          python3 scripts/validate-yaml.py .
+
+      - name: Markdown lint
+        run: npx --yes markdownlint-cli2 "**/*.md" "!node_modules/**"
+
+      - name: Link check
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --accept 200,204,206,301,302,403 './**/*.md'
+          fail: true
+
+      - name: Gitleaks secret scan
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
