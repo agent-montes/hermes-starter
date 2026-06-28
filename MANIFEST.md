@@ -24,15 +24,17 @@ Included public-safe artifacts:
 - `examples/` — non-sensitive examples only.
 
 ## Detailed docs
-
-- `docs/workspace-overview.md` — five-folder architecture.
+- `docs/system-overview.md` — full setup explanation.
+- `docs/daily-assistant-kit.md` — daily assistant interview/delegation/promotion loop.
+- `docs/daily-assistant-safety.md` — approval gates and external-action rules.
+- `docs/workflow-delegation-map.md` — four-bucket autonomy model and scoring rubric.
+- `docs/workspace-overview.md` — five-folder model.
 - `docs/wiki.md` — Wiki purpose and structure.
 - `docs/operations.md` — Operations purpose and lane model.
 - `docs/secrets.md` — secret boundary and safe placeholders.
 - `docs/recovery.md` — recovery boundary and restore model.
 - `docs/folder-interactions.md` — how folders work together.
 - `docs/agent-context-files.md` — purpose of AGENTS, CLAUDE, and Hermes context files.
-- `docs/system-overview.md` — end-to-end setup overview and public-safe specificity rules.
 - `docs/agents-and-tools.md` — agent/tool responsibilities and model-lane policy.
 - `docs/secrets-and-recovery.md` — blank secret inventory and recovery boundary guidance.
 - `docs/replication-runbook.md` — setup and verification runbook.
@@ -43,7 +45,7 @@ Included public-safe artifacts:
 ## Templates
 
 - `templates/Hermes Wiki/` — blank Wiki structure.
-- `templates/Hermes Operations/` — private Operations lane skeleton.
+- `templates/Hermes Operations/` — private Operations lane skeleton, including Daily Assistant Kit templates for interview, workflow selection, skill drafts, cron drafts, morning check-in, approval rules, and weekly review.
 - `templates/Hermes Secrets/` — empty secret-boundary folder and blank category template.
 - `templates/Hermes Recovery/` — blank restore and backup templates.
 

@@ -438,11 +438,16 @@ Important directories:
 
 The tool catalog includes notes for document conversion, web crawlers, media processing, video generation, image generation, audio/transcription, YouTube/download helpers, ASCII/terminal art, creative web artifacts, GitHub/dev workflow tools, search/GIF tools, and local model fallback tools. Each note credits the official source or project and keeps credentials/output/state out of Git.
 
+The Daily Assistant Kit adds a structured way to make Hermes useful every day without over-automating: interview the user, build a delegation map, choose three first workflows, test manually, promote repeated workflows into skills, promote proven checks into scheduled jobs, and review weekly. It is documented in `docs/daily-assistant-kit.md`, `docs/daily-assistant-safety.md`, and `docs/workflow-delegation-map.md`. Public templates live under `templates/Hermes Operations/`; active skills, cron jobs, memory writes, and external actions are created only in the user's private setup after explicit approval.
+
 ## Important docs
 
 - `docs/workspace-overview.md` — five-folder architecture.
 - `docs/folder-interactions.md` — how the folders work together.
 - `docs/system-overview.md` — system-level explanation.
+- `docs/daily-assistant-kit.md` — daily assistant interview/delegation/promotion loop.
+- `docs/daily-assistant-safety.md` — approval gates and external-action boundaries.
+- `docs/workflow-delegation-map.md` — four-bucket autonomy model and scoring rubric.
 - `docs/wiki.md` — Wiki purpose and structure.
 - `docs/operations.md` — Operations purpose and lane model.
 - `docs/secrets.md` — secret boundary and placeholder rules.
@@ -470,7 +475,7 @@ The Secrets template documents categories only. The visible workspace Secrets fo
 1. Click `Use this template` on GitHub.
 2. Create a new private or public repo from it.
 3. Clone your new repo locally.
-4. Read `docs/workspace-overview.md`.
+4. Read `docs/workspace-overview.md` and `docs/daily-assistant-kit.md`.
 5. Copy the relevant folders from `templates/` into private sibling folders.
 6. Fill placeholders only in private local files.
 7. Put real credentials in a private secret store.
