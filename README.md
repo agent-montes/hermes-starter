@@ -432,9 +432,11 @@ Important directories:
 - `templates/` contains copyable blank templates.
 - `workspace/` shows the public-safe shape of the sibling folders.
 - `examples/` contains placeholder examples only.
-- `tools/` contains public-safe tool notes.
+- `tools/` contains the credited public-safe tool catalog.
 - `scripts/` contains local checks.
 - `.github/workflows/` runs hygiene checks on GitHub.
+
+The tool catalog includes notes for document conversion, web crawlers, media processing, video generation, image generation, audio/transcription, YouTube/download helpers, ASCII/terminal art, creative web artifacts, GitHub/dev workflow tools, search/GIF tools, and local model fallback tools. Each note credits the official source or project and keeps credentials/output/state out of Git.
 
 ## Important docs
 

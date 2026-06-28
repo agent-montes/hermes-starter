@@ -56,7 +56,19 @@ Included public-safe artifacts:
 
 ## Tools and automation
 
-- `tools/` — public-safe tool notes.
+- `tools/README.md` — index for the credited public-safe tool catalog.
+- `tools/document-conversion.md` — MarkItDown.
+- `tools/web-crawlers.md` and `tools/web-ingest.md` — Crawl4AI and web/document ingest policy.
+- `tools/media-processing.md` — FFmpeg and ImageMagick.
+- `tools/video-generation.md` — Manim, FFmpeg, and p5.js.
+- `tools/image-generation.md` — ComfyUI, p5.js, Excalidraw, ImageMagick.
+- `tools/audio-and-transcription.md` — Whisper and FFmpeg.
+- `tools/youtube-and-downloaders.md` — yt-dlp and FFmpeg.
+- `tools/ascii-and-terminal-art.md` — pyfiglet, cowsay, boxes.
+- `tools/creative-web-artifacts.md` — p5.js, Excalidraw, ImageMagick.
+- `tools/github-and-dev-workflow.md` — GitHub CLI, git, zx.
+- `tools/research-and-gif-tools.md` — Exa and Tenor GIF API.
+- `tools/local-models.md` and `tools/local-ollama.md` — Ollama/local fallback policy.
 - `scripts/hygiene-check.sh` — local leak/hygiene check.
 - `.github/workflows/hygiene.yml` — CI hygiene check.
 - `workspace/` — public-safe visible folder shell for the five-folder model.
