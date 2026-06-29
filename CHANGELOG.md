@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.1.2 - 2026-06-29
+
+Public-safe voice-lab skeleton update.
+
+Highlights:
+
+- added `docs/voice-lab.md` for realtime voice shell experiments;
+- added `tools/realtime-voice.md` with provider, secret, account setup, and rollback boundaries;
+- added a private Operations voice-lab evaluation template;
+- documented that account verification, CAPTCHA, recovery, billing, and passkey steps are human-only;
+- kept provider keys, browser state, logs, transcripts, project IDs, and live sandbox state out of the starter.
+
 ## 0.1.1 - 2026-06-28
 
 CI fix: adjusted starter shell scripts to satisfy ShellCheck in GitHub Actions.

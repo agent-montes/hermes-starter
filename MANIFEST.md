@@ -45,11 +45,12 @@ Included public-safe artifacts:
 - `docs/setup-principles.md` — general principles.
 - `docs/github-template-workflow.md` — GitHub template workflow.
 - `docs/tool-review-checklist.md` — tool review checklist.
+- `docs/voice-lab.md` — public-safe realtime voice shell and Hermes API bridge pattern.
 
 ## Templates
 
 - `templates/Hermes Wiki/` — blank Wiki structure.
-- `templates/Hermes Operations/` — private Operations lane skeleton, including Daily Assistant Kit templates for interview, workflow selection, skill drafts, cron drafts, morning check-in, approval rules, and weekly review.
+- `templates/Hermes Operations/` — private Operations lane skeleton, including Daily Assistant Kit templates and a voice-lab evaluation template.
 - `templates/Hermes Secrets/` — empty secret-boundary folder and blank category template.
 - `templates/Hermes Recovery/` — blank restore and backup templates.
 
@@ -69,6 +70,7 @@ Included public-safe artifacts:
 - `tools/video-generation.md` — Manim, FFmpeg, and p5.js.
 - `tools/image-generation.md` — ComfyUI, p5.js, Excalidraw, ImageMagick.
 - `tools/audio-and-transcription.md` — Whisper and FFmpeg.
+- `tools/realtime-voice.md` — realtime voice front ends and Hermes voice-shell boundaries.
 - `tools/youtube-and-downloaders.md` — yt-dlp and FFmpeg.
 - `tools/ascii-and-terminal-art.md` — pyfiglet, cowsay, boxes.
 - `tools/creative-web-artifacts.md` — p5.js, Excalidraw, ImageMagick.

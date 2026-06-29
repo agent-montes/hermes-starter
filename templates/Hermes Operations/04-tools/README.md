@@ -14,3 +14,7 @@ For each tool, include:
 - rollback/removal steps
 
 Do not copy live config or credentials.
+
+## Voice lab evaluations
+
+Use `voice-lab.template.md` for realtime voice shells, speech stacks, and local Hermes API bridge experiments. Keep filled-in copies private because they may reference provider accounts, local paths, transcripts, or secret variable names.

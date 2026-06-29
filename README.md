@@ -55,6 +55,7 @@ It contains:
 - blank folder templates;
 - placeholder config examples;
 - public-safe tool notes;
+- voice-lab evaluation boundaries;
 - agent context examples;
 - hygiene checks;
 - GitHub workflow checks.

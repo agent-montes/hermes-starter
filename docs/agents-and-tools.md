@@ -85,6 +85,29 @@ Responsibilities:
 - check updates in report-only mode;
 - require human approval before installing, pulling, upgrading, downloading binaries, or changing permissions.
 
+## Realtime voice shell
+
+Purpose: provide low-latency microphone and speaker interaction while Hermes remains the worker for long-running tool use.
+
+Recommended behavior:
+
+- treat the voice app as a shell, not the main Hermes brain;
+- submit complete task briefs to Hermes;
+- keep local API bearer tokens in private Secrets and ignored `.env` files;
+- preserve Hermes approval gates for external actions;
+- avoid storing raw audio, transcripts, cookies, browser profiles, or provider account state in the repository;
+- leave account verification, CAPTCHA, recovery, billing, and passkey steps to the human account owner.
+
+Public template placeholders:
+
+```yaml
+voice_provider: <VOICE_PROVIDER>
+voice_shell: <VOICE_SHELL>
+hermes_api_url: http://127.0.0.1:<PORT_PLACEHOLDER>
+```
+
+Do not commit provider keys, local API keys, cloud project IDs, billing identifiers, transcripts, or sandbox logs.
+
 ## Emergency local model lane
 
 Local models may be documented as an emergency lane, but they should not silently replace the main reasoning model.

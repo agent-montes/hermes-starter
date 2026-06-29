@@ -22,6 +22,7 @@ Each note should credit where the tool came from and include:
 - `video-generation.md` — Manim, FFmpeg, and p5.js for animation/video.
 - `image-generation.md` — ComfyUI, p5.js, Excalidraw, ImageMagick.
 - `audio-and-transcription.md` — Whisper and FFmpeg.
+- `realtime-voice.md` — realtime voice front ends and Hermes voice-shell boundaries.
 - `youtube-and-downloaders.md` — yt-dlp and FFmpeg.
 - `ascii-and-terminal-art.md` — pyfiglet, cowsay, boxes.
 - `creative-web-artifacts.md` — p5.js, Excalidraw, ImageMagick.
