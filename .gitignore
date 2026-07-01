@@ -36,8 +36,22 @@ backups/
 # Local dev
 .DS_Store
 .venv/
+.venv-*/
 node_modules/
 __pycache__/
 .pytest_cache/
+
+# Optional app dependency/build outputs
+apps/*/node_modules/
+apps/*/dist/
+apps/*/dist-electron/
+apps/*/release/
+apps/*/.venv/
+apps/*/.venv-*/
+apps/*/*.log
+apps/*/.jarvis-phone*
+apps/*/phone-bridge.log
+apps/*/JARVIS_SETUP_STATUS.md
+
 # Local hygiene configuration
 .hygiene-denylist.local

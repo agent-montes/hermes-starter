@@ -12,6 +12,7 @@ Included public-safe artifacts:
 - `CONTRIBUTING.md` — contribution rules for safe changes.
 - `EXCLUDE.md` — material forbidden from the starter.
 - `MANIFEST.md` — this file.
+- `NOTICE.md` — provenance and attribution notes for imported optional modules.
 
 ## Agent context
 
@@ -46,6 +47,16 @@ Included public-safe artifacts:
 - `docs/github-template-workflow.md` — GitHub template workflow.
 - `docs/tool-review-checklist.md` — tool review checklist.
 - `docs/voice-lab.md` — public-safe realtime voice shell and Hermes API bridge pattern.
+- `docs/jarvis-voice.md` — optional JARVIS voice app setup, boundaries, and verification.
+- `docs/modular-installer.md` — opt-in module installer model and future phases.
+
+## Optional apps and modules
+
+- `apps/jarvis-voice/` — optional public-safe JARVIS realtime voice app source snapshot.
+- `modules/README.md` — opt-in module registry overview.
+- `modules/jarvis-voice/module.yaml` — JARVIS module metadata.
+- `modules/jarvis-voice/README.md` — module setup and secret-boundary notes.
+- `modules/jarvis-voice/templates/Hermes Operations/04-tools/jarvis-voice.template.md` — private Operations note template copied by `--with jarvis-voice`.
 
 ## Templates
 
@@ -77,8 +88,8 @@ Included public-safe artifacts:
 - `tools/github-and-dev-workflow.md` — GitHub CLI, git, zx.
 - `tools/research-and-gif-tools.md` — Exa and Tenor GIF API.
 - `tools/local-models.md` and `tools/local-ollama.md` — Ollama/local fallback policy.
-- `scripts/hygiene-check.sh` — local leak/hygiene check with optional local denylist.
-- `scripts/init-workspace.sh` — one-command private sibling-folder initializer with dry-run mode.
+- `scripts/hygiene-check.sh` — local leak/hygiene check with optional local denylist and generated-output pruning.
+- `scripts/init-workspace.sh` — one-command private sibling-folder initializer with dry-run mode and opt-in modules.
 - `scripts/sync-context-files.sh` — verifies/generates `AGENTS.md` and `CLAUDE.md` from canonical `.hermes.md`.
 - `scripts/validate-yaml.py` — YAML syntax validation for examples/workflows.
 - `.github/workflows/hygiene.yml` — CI for hygiene, context drift, shell, Markdown, YAML, links, and secret scanning.
