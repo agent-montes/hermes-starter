@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.2.0 - 2026-06-30
+
+Public-safe modular installer and JARVIS voice module preview.
+
+Highlights:
+
+- added `apps/jarvis-voice/` as an optional public-safe voice app source snapshot;
+- added `modules/` with a `jarvis-voice` module registry entry and private Operations template;
+- extended `scripts/init-workspace.sh` with `--list-modules` and `--with jarvis-voice`;
+- documented the modular installer model in `docs/modular-installer.md`;
+- documented JARVIS voice setup, secrets boundaries, wake word, and phone bridge in `docs/jarvis-voice.md`;
+- added `NOTICE.md` provenance notes for imported optional modules;
+- updated hygiene checks to prune generated dependency/build folders while preserving public-file leak scans.
+
 ## 0.1.2 - 2026-06-29
 
 Public-safe voice-lab skeleton update.

@@ -1,0 +1,16 @@
+node_modules/
+dist/
+dist-electron/
+release/
+.DS_Store
+.env
+.venv/
+.venv-openwakeword/
+__pycache__/
+*.pyc
+*.log
+sidecar/runtime/
+.jarvis-phone*
+phone-bridge.log
+JARVIS_SETUP_STATUS.md
+sketches/

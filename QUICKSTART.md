@@ -8,6 +8,10 @@ git clone <YOUR_REPOSITORY_URL>
 cd my-hermes-starter
 ./scripts/init-workspace.sh --dry-run
 ./scripts/init-workspace.sh
+# Optional module preview/setup:
+./scripts/init-workspace.sh --list-modules
+./scripts/init-workspace.sh --dry-run --with jarvis-voice
+./scripts/init-workspace.sh --with jarvis-voice
 ./scripts/hygiene-check.sh
 ```
 
@@ -17,7 +21,8 @@ What this does:
 - copies only public-safe templates;
 - refuses to overwrite non-empty Secrets or Recovery folders;
 - creates local `.gitignore` files for private folders;
-- leaves credentials, sessions, logs, OAuth state, and backups out of the public starter.
+- optionally copies module-specific public-safe Operations notes, such as `jarvis-voice`;
+- leaves credentials, sessions, logs, OAuth state, app runtime outputs, and backups out of the public starter.
 
 After the quickstart, read:
 
@@ -25,5 +30,7 @@ After the quickstart, read:
 - `docs/daily-assistant-kit.md`
 - `docs/secrets.md`
 - `docs/recovery.md`
+- `docs/modular-installer.md`
+- `docs/jarvis-voice.md` if you enable the optional JARVIS module
 
 Do not paste real secrets into this repository.

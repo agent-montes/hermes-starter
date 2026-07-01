@@ -22,6 +22,7 @@ Never add:
 - personal account exports
 - hardcoded home paths such as `/Users/<name>`
 - machine-specific facts unless clearly marked as placeholders or examples
+- generated optional app outputs such as `apps/*/node_modules/`, `apps/*/dist/`, `apps/*/release/`, `.venv-openwakeword/`, recordings, transcripts, and phone bridge logs
 
 Folder-specific rules:
 

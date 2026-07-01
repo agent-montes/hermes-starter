@@ -1,0 +1,8 @@
+id: jarvis-voice
+name: JARVIS Voice App
+status: preview
+app_path: apps/jarvis-voice
+summary: Optional Electron realtime voice shell for Hermes with local wake-word and LAN phone bridge patterns.
+secrets_policy: placeholders-only; real provider keys and local Hermes API keys remain in ignored local files or private secret storage.
+installs_runtime_dependencies: false
+copies_private_templates: true

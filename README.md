@@ -15,6 +15,7 @@ Hermes Starter is:
 - a folder model for separating knowledge, operations, credentials, backups, and reusable public instructions;
 - a set of blank templates for private local folders;
 - a hygiene-checked GitHub template repository;
+- a modular installer scaffold for optional features like JARVIS voice;
 - a safe place to document generic tool setup and agent operating rules.
 
 Hermes Starter is not:
@@ -56,6 +57,8 @@ It contains:
 - placeholder config examples;
 - public-safe tool notes;
 - voice-lab evaluation boundaries;
+- optional modules under `modules/`;
+- optional app examples under `apps/`;
 - agent context examples;
 - hygiene checks;
 - GitHub workflow checks.
@@ -420,6 +423,8 @@ Do not expose unauthenticated local model APIs to a LAN or public internet.
 ├── CONTRIBUTING.md
 ├── docs/
 ├── examples/
+├── apps/
+├── modules/
 ├── scripts/
 ├── templates/
 ├── tools/
@@ -433,8 +438,10 @@ Important directories:
 - `templates/` contains copyable blank templates.
 - `workspace/` shows the public-safe shape of the sibling folders.
 - `examples/` contains placeholder examples only.
+- `apps/` contains optional public-safe app modules such as `apps/jarvis-voice/`.
+- `modules/` contains opt-in installer metadata and private Operations templates.
 - `tools/` contains the credited public-safe tool catalog.
-- `scripts/` contains local checks, workspace initialization, YAML validation, and context mirror verification.
+- `scripts/` contains local checks, modular workspace initialization, YAML validation, and context mirror verification.
 - `.github/workflows/` runs hygiene, context, shell, Markdown, YAML, link, and secret-scan checks on GitHub.
 - `QUICKSTART.md` contains the short 10-minute path.
 
@@ -460,6 +467,9 @@ The Daily Assistant Kit adds a structured way to make Hermes useful every day wi
 - `docs/replication-runbook.md` — setup checklist.
 - `docs/tool-review-checklist.md` — tool review process.
 - `docs/github-template-workflow.md` — safe publishing workflow.
+- `docs/voice-lab.md` — public-safe realtime voice shell pattern.
+- `docs/jarvis-voice.md` — optional JARVIS voice app setup and safety notes.
+- `docs/modular-installer.md` — opt-in module installer model.
 
 ## Templates included
 
@@ -491,6 +501,18 @@ For the shortest path, use `QUICKSTART.md`.
 ./scripts/init-workspace.sh
 ```
 
+Optional: include public-safe Operations notes for the JARVIS voice module:
+
+```bash
+./scripts/init-workspace.sh --with jarvis-voice
+```
+
+List available modules with:
+
+```bash
+./scripts/init-workspace.sh --list-modules
+```
+
 6. Put real credentials only in a private secret store.
 7. Put backup artifacts only in private Recovery storage.
 8. Run:
@@ -505,7 +527,7 @@ For the shortest path, use `QUICKSTART.md`.
 
 ## Hygiene and safety checks
 
-The starter includes `scripts/hygiene-check.sh`, `scripts/init-workspace.sh`, `scripts/sync-context-files.sh`, `scripts/validate-yaml.py`, and a GitHub Actions workflow.
+The starter includes `scripts/hygiene-check.sh`, modular `scripts/init-workspace.sh`, `scripts/sync-context-files.sh`, `scripts/validate-yaml.py`, and a GitHub Actions workflow.
 
 The hygiene check looks for:
 
