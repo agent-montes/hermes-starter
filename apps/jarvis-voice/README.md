@@ -374,7 +374,7 @@ GEMINI_LIVE_MODEL=models/gemini-3.1-flash-live-preview
 GEMINI_LIVE_VOICE=Leda
 HERMES_API_URL=http://127.0.0.1:8642
 API_SERVER_KEY=<LOCAL_HERMES_API_KEY>
-OPENWAKEWORD_WAKE_ENABLED=true
+OPENWAKEWORD_WAKE_ENABLED=false
 OPENWAKEWORD_MODEL=hey_jarvis
 OPENWAKEWORD_THRESHOLD=0.35
 OPENWAKEWORD_VAD_THRESHOLD=0
@@ -383,6 +383,8 @@ OPENWAKEWORD_VAD_THRESHOLD=0
 `HERMES_BIN` is optional. Set it only if the packaged GUI app cannot find the
 Hermes binary on PATH. If the Hermes gateway is already running, J.A.R.V.I.S. only needs
 `HERMES_API_URL` and `API_SERVER_KEY`.
+
+The public template defaults `OPENWAKEWORD_WAKE_ENABLED=false` so wake listening is opt-in. Personal always-on deployments may set it to `true` in their ignored local `.env`.
 
 ## Exact Google Models, SDKs & Assets (pinned reference)
 

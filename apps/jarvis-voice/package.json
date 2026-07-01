@@ -64,7 +64,27 @@
       "category": "public.app-category.productivity",
       "icon": "build/icon.png",
       "extendInfo": {
-        "CFBundleDisplayName": "J.A.R.V.I.S."
+        "CFBundleDisplayName": "J.A.R.V.I.S.",
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": false,
+          "NSAllowsLocalNetworking": true,
+          "NSExceptionDomains": {
+            "127.0.0.1": {
+              "NSIncludesSubdomains": false,
+              "NSTemporaryExceptionAllowsInsecureHTTPLoads": true,
+              "NSTemporaryExceptionAllowsInsecureHTTPSLoads": false,
+              "NSTemporaryExceptionMinimumTLSVersion": "1.0",
+              "NSTemporaryExceptionRequiresForwardSecrecy": false
+            },
+            "localhost": {
+              "NSIncludesSubdomains": false,
+              "NSTemporaryExceptionAllowsInsecureHTTPLoads": true,
+              "NSTemporaryExceptionAllowsInsecureHTTPSLoads": false,
+              "NSTemporaryExceptionMinimumTLSVersion": "1.0",
+              "NSTemporaryExceptionRequiresForwardSecrecy": false
+            }
+          }
+        }
       },
       "target": [
         "dir"
@@ -74,6 +94,7 @@
       "target": [
         "dir"
       ]
-    }
+    },
+    "afterPack": "scripts/harden-macos-plist.cjs"
   }
 }

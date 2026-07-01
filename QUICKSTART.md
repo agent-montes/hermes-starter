@@ -3,7 +3,7 @@
 This path creates a private Hermes workspace from the public-safe starter template.
 
 ```bash
-gh repo create my-hermes-starter --template agent-montes/hermes-starter --public
+gh repo create my-hermes-starter --template <YOUR_GITHUB_USERNAME>/hermes-starter --public
 git clone <YOUR_REPOSITORY_URL>
 cd my-hermes-starter
 ./scripts/init-workspace.sh --dry-run

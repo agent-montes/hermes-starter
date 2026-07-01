@@ -67,12 +67,14 @@ Important variables:
 GEMINI_API_KEY=<PROVIDER_KEY_FROM_YOUR_SECRET_STORE>
 HERMES_API_URL=http://127.0.0.1:<LOCAL_PORT>
 API_SERVER_KEY=<LOCAL_HERMES_API_KEY>
-OPENWAKEWORD_WAKE_ENABLED=true
+OPENWAKEWORD_WAKE_ENABLED=false
 OPENWAKEWORD_MODEL=hey_jarvis
 OPENWAKEWORD_THRESHOLD=0.35
 ```
 
 Do not commit `.env` or any file derived from it.
+
+The public template defaults `OPENWAKEWORD_WAKE_ENABLED=false` so wake listening is opt-in. Personal always-on deployments may set it to `true` in their ignored local `.env`.
 
 ## Wake word
 

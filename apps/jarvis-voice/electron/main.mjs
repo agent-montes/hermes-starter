@@ -177,7 +177,7 @@ function wakeConfig() {
   );
   const model = String(process.env.OPENWAKEWORD_MODEL || "hey_jarvis").trim() || "hey_jarvis";
   return {
-    enabled: parseEnabled(process.env.OPENWAKEWORD_WAKE_ENABLED, true),
+    enabled: parseEnabled(process.env.OPENWAKEWORD_WAKE_ENABLED, false),
     engine: "openwakeword",
     model,
     keyword: model.replace(/[_-]+/g, " "),
